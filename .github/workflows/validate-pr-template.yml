@@ -18,7 +18,7 @@ jobs:
             | jq -r '.body')
 
           # Check if one of the required checkboxes in the 'Docs Checklist' is marked
-          if ! echo "$PR_BODY" | grep -Eq '\[x\] I have created a separate PR on the sequence docs repository for documentation updates: \[Link to docs PR\]\(https://github.com/0xsequence/docs/pulls\)|\[x\] No documentation update is needed for this change'; then
+          if ! echo "$PR_BODY" | grep -Eq '\[x\] I have created a separate PR on the sequence docs repository for documentation updates|\[x\] No documentation update is needed for this change'; then
             echo "Error: The 'Docs Checklist' section in the PR template has not been completed properly."
             echo "Please ensure you have checked one of the options in the 'Docs Checklist' section."
             exit 1
